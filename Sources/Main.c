@@ -31,7 +31,7 @@ void calcularDistanciaPercorrida(Passagem* listaPassagens, Distancia* listaDista
     float distanciaTotal = 0.0;
 
     while (atual != NULL) {
-        float distancia = obterDistancia(listaDistancias, atual->codSensor, atual->codSensor + 1); // Exemplo de distância entre sensores consecutivos
+        float distancia = obterDistancia(listaDistancias, atual->codSensor, atual->codSensor + 1);
         if (distancia != -1) {
             distanciaTotal += distancia;
         }
@@ -45,9 +45,9 @@ void calcularDistanciaPercorrida(Passagem* listaPassagens, Distancia* listaDista
 void calcularVelocidadeMedia(Passagem* listaPassagens) {
     Passagem* atual = listaPassagens;
     while (atual != NULL) {
-        // Exemplo de cálculo de velocidade (distância / tempo). Aqui a distância e o tempo são apenas ilustrativos.
-        float distancia = 10.0; // Exemplo fixo, substitua com o cálculo real
-        float tempo = 10.0; // Exemplo fixo, substitua com o cálculo real
+       
+        float distancia = 10.0;
+        float tempo = 10.0; 
         float velocidade = distancia / tempo;
         printf("Veículo %d, Velocidade: %.2f km/h\n", atual->codVeiculo, velocidade);
         atual = atual->proxima;
@@ -87,14 +87,13 @@ void exportarParaXML(Dono* listaDonos, Veiculo* listaVeiculos, Passagem* listaPa
 
 // Função principal
 int main() {
-    // Inicialização das listas
+    
     Dono* listaDonos = inicializaDono();
     Veiculo* listaVeiculos = inicializaVeiculo();
     Passagem* listaPassagens = inicializaPassagem();
     Sensor* listaSensores = inicializaSensor();
     Distancia* listaDistancias = inicializaDistancia();
 
-    // Exemplos de registo (pode ser substituído por carregamento de ficheiros)
     registarDono(&listaDonos, 12345678, "José Martins", "6200");
     registarVeiculo(&listaVeiculos, "22-HT-66", "Opel", "Corsa", 2008, 12345678, 1);
     registarSensor(&listaSensores, 1, "Maia-Norte", "32º S, 22’, 56’’ 4ºW, 02’, 24’’");
