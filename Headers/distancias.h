@@ -4,11 +4,11 @@
 typedef struct distancia {
     int codSensor1;
     int codSensor2;
-    float distancia; // Distância entre os sensores (em km)
+    float distancia; 
     struct distancia* proxima;
 } Distancia;
 
-// Funções para manipular distâncias entre sensores
+
 Distancia* inicializaDistancia();
 void registarDistancia(Distancia** lista, int codSensor1, int codSensor2, float distancia);
 void listarDistancias(Distancia* lista);

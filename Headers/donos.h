@@ -8,7 +8,6 @@ typedef struct dono {
     struct dono* proximo;
 } Dono;
 
-// Funções para manipular donos
 Dono* inicializaDono();
 void registarDono(Dono** lista, int numContribuinte, const char* nome, const char* codPostal);
 void listarDonos(Dono* lista);
